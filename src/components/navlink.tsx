@@ -1,9 +1,6 @@
 import type { ReactNode } from 'react';
 import logoInfovest from '../assets/LOGO FULL.png'
 
-// ==========================================
-// 1. KOMPONEN NAVLINK (Kode asli milikmu)
-// ==========================================
 interface NavLinkProps {
   label: string;
   href: string;
@@ -26,9 +23,6 @@ export const NavLink = ({ label, href, icon, isActive = false }: NavLinkProps) =
   );
 };
 
-// ==========================================
-// 2. TAMBAHAN KOMPONEN NAVBAR
-// ==========================================
 interface MenuItem {
   label: string;
   href: string;
@@ -47,7 +41,7 @@ export const Navbar = ({ items, activeHref, onNavigate }: NavbarProps) => {
       <div className="container mx-auto px-4">
         <div className="flex justify-center md:justify-between items-center py-3">
           
-          {/* Logo Brand (Tampil di layar medium ke atas) */}
+          {/* Logo Brand */}
           <div className="flex items-center">
             <img
               src={logoInfovest}
@@ -62,7 +56,7 @@ export const Navbar = ({ items, activeHref, onNavigate }: NavbarProps) => {
               <li 
                 key={item.href} 
                 onClick={(e) => {
-                  e.preventDefault(); // Mencegah default jump link HTML
+                  e.preventDefault(); 
                   onNavigate(item.href);
                 }}
               >
@@ -70,7 +64,7 @@ export const Navbar = ({ items, activeHref, onNavigate }: NavbarProps) => {
                   label={item.label}
                   href={item.href}
                   icon={item.icon}
-                  isActive={activeHref === item.href} // Logika penentu status aktif
+                  isActive={activeHref === item.href} 
                 />
               </li>
             ))}
