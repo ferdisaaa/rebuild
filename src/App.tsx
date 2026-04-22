@@ -1,5 +1,5 @@
 //import LoginFrom from "./pages/LoginForm";
-import RegisterFrom from "./pages/RegisterForm";
+
 import RegisterPage from "./pages/RegisterPage";
 
 function App(){
